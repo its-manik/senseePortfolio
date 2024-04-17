@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess Academy</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="my-nav">
+          <input type="checkbox" id="nav-check" />
+          <div class="logo">
+            <a href="#"><h2><span>D</span>ev S</h2>
+              <span>Web Development & Design</span></a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#portfolio">My Portfolio</a></li>
+            <li><a href="#getInTouch" class="book">Get In Touch</a></li>
+          </ul>
+
+          <div class="nav-btn">
+            <label for="nav-check">
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section id="hero">
+      <div class="container">
+        <div class="heroInner">
+          <div class="heroContent">
+            <h1>
+              Hi! My name is Sensee Jay Freelance Web Developer & Designer
+            </h1>
+            <p>
+              Based in Minneapolis, Minnesota I craft beautiful digital
+              experiences.<br />
+              With a blend of creativity and functionality, I specialized in
+              creating websites <br />
+              and design services for individuals and small business. My designs
+              are high quality, user friendly and affordable. Let me elevate
+              your online presence and drive results.
+            </p>
+            <button class="book">BOOK A DEMO</button>
+          </div>
+          <div class="heroImage">
+            <img src="./images/hero.jpeg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="getInTouch">
+      <div class="container">
+        <div class="contactWrapper">
+          <div class="contactLeft">
+            <h2>
+              Leave me a line or two about your project and I will get back
+            </h2>
+            <p>
+              "I am the master of my fate and I am the captain of my boat. While
+              ups and downs are a part of everyone's journey, how you face it
+              makes you the person or artiste you are." -Jubin Nautiyal
+            </p>
+          </div>
+          <div class="contactRight">
+            <div class="contactForm">
+              <form class="mainform">
+                <input type="text" placeholder="Name" name="name" id="name" />
+                <input type="text" placeholder="Email" name="email" id="email" />
+                <textarea placeholder="Message" rows="8" name="message" id="message"></textarea>
+                <button type="submit" onclick="sendMail()">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="heading">
+          <h2><span>Portfolio</span></h2>
+        </div>
+
+        <div class="portfolioGrid">
+          <div class="portfolioBox">
+            <img src="./images/kenny-eliason-y_6rqStQBYQ-unsplash.jpg" alt="" />
+          </div>
+          <div class="portfolioBox">
+            <img src="./images/clay-banks-ajFZ2q_CjvQ-unsplash.jpg" alt="" />
+          </div>
+          <div class="portfolioBox">
+            <img src="./images/kid-playing-chess-with-father.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="mainFooter">
+          <div class="fsocial">
+            <a href="mailto:senseejangaba@gmail.com"
+              ><i class="fa-sharp fa-regular fa-envelope"></i
+            ></a>
+            <a href="https://github.com/Sjangaba/html.portfolio"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href=""> <i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+          <div class="ftext">2024 design by Sense...</div>
+          <div class="backtotop"><a href="#hero">Back To Top</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "_sPY9Cjw-xnbeDrpq",
+        });
+      })();
+    </script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

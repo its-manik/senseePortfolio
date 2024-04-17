@@ -1,0 +1,549 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  overflow-x: hidden;
+}
+
+:root {
+  --primaryColor: #fb0101;
+  --black: #000;
+  --white: #fff;
+}
+
+.container {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.book {
+  outline: none;
+  border: none;
+  background: var(--primaryColor);
+  border: 3px solid var(--primaryColor);
+  padding: 18px 52px;
+  color: #fff !important;
+  font-size: 18px;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book:hover {
+  background: transparent;
+  border: 3px solid var(--primaryColor);
+  color: var(--black) !important;
+}
+
+/* Navbar start  */
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 20px 0;
+  transition: 0.5s;
+  z-index: 10000;
+}
+
+header.sticky {
+  background: var(--white);
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 15px -10px;
+  padding: 10px 0;
+}
+
+.my-nav > .nav-btn {
+  display: none;
+}
+
+.my-nav > #nav-check {
+  display: none;
+}
+
+header .container {
+  position: relative;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo h2 {
+  font-size: 30px;
+  font-family: cursive;
+  margin: 0;
+}
+
+.logo a{
+  color: var(--black);
+}
+
+.logo h2 span {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.logo span {
+  font-family: cursive;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: var(--black);
+  font-size: 18px;
+}
+
+.nav-links li:hover a {
+  transition: all 0.25s ease;
+  color: var(--primaryColor);
+}
+
+.nav-links .book {
+  padding: 15px 25px;
+}
+
+@media (max-width: 760px) {
+  .logo {
+    max-width: 200px;
+  }
+
+  .my-nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+  }
+  .my-nav > .nav-btn > label {
+    transition: 0.6s;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+    cursor: pointer;
+  }
+  .my-nav > .nav-btn > label span {
+    transition: 0.2s;
+  }
+
+  #nav-check:checked ~ .nav-btn > label span:first-child {
+    rotate: 45deg;
+    transform-origin: top left;
+    margin-left: 2px;
+  }
+  #nav-check:checked ~ .nav-btn > label span:last-child {
+    rotate: -45deg;
+    margin-top: -13px;
+    transform-origin: bottom right;
+  }
+  #nav-check:checked ~ .nav-btn > label span:nth-child(2) {
+    display: none !important;
+  }
+
+  .my-nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #000000;
+  }
+  .my-nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100vw;
+    background-color: #ffffff;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 65px;
+    left: -15px;
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+  }
+
+  .nav-links .book{
+    margin-top: 0px;
+    display: inline-block;
+  }
+
+  .my-nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .my-nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .my-nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+    padding: 20px 20px;
+  }
+}
+/* Navbar end  */
+
+/* Hero Start  */
+
+#hero {
+  background: url(../images/2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+.heroInner {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.heroContent {
+  width: 100%;
+}
+
+.heroContent h4 {
+  background: var(--white);
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 50px;
+  color: var(--primaryColor);
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.heroContent h1 {
+  font-size: 45px;
+  line-height: 1.1em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.heroContent p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroImage img {
+  width: 60%;
+  height: 70%;
+  max-width: 480px;
+  max-height: 650px;
+  border-radius: 35px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 15px -10px;
+}
+
+/* Hero end  */
+
+/* Levels Start  */
+
+#levels {
+  padding: 100px 0;
+}
+
+.contactWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.contactLeft,
+.contactRight {
+  width: 100%;
+}
+
+.contactLeft {
+  position: sticky;
+  top: 200px;
+}
+
+.contactLeft h2 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.contactLeft p {
+  font-size: 20px;
+}
+
+.contactRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.contactForm {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainform {
+  max-width: 400px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mainform input,
+.mainform textarea {
+  width: 100%;
+  padding: 15px 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.mainform button {
+  max-width: 150px;
+  padding: 12px 25px;
+  border: 2px solid var(--primaryColor);
+  color: var(--white);
+  background: var(--primaryColor);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.mainform button:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* Contact end  */
+
+/* Portfolio Start */
+
+#portfolio {
+  padding: 100px 0;
+  background: #f9f7f3;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.heading h4 {
+  background: #f6f6f6;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid #ddd;
+  color: var(--primaryColor);
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.heading h2 {
+  font-size: 45px;
+}
+
+.heading h2 span {
+  color: var(--primaryColor);
+}
+
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.portfolioBox img {
+  border-radius: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.portfolioBox img:hover {
+  scale: 1.08;
+}
+
+/* Contact end */
+
+/* Footer Start  */
+
+footer {
+  background: #fff8ee;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.mainFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fsocial{
+  display: flex;
+  gap: 10px;
+}
+
+.fsocial i{
+  font-size: 25px;
+  color: var(--primaryColor);
+  transition: all .3s ease;
+}
+
+.fsocial i:hover{
+  color: var(--black);
+}
+
+.backtotop a {
+  background: var(--primaryColor);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* Footer end */
+
+@media screen and (max-width: 1550px) {
+  #portfolio .container {
+    width: 95vw;
+  }
+
+  .contactBox {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 90vw;
+  }
+
+  .contactBox {
+    width: 48%;
+    min-height: 300px;
+  }
+
+  .contactRight {
+    padding: 0;
+  }
+
+
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 92vw;
+  }
+
+  .heroContent h1 {
+    font-size: 40px;
+  }
+
+  #hero {
+    height: auto;
+  }
+
+  .heroInner {
+    flex-direction: column;
+    padding-top: 150px;
+    height: auto;
+  }
+
+  .contactWrapper {
+    flex-direction: column;
+  }
+
+  .contactLeft {
+    position: static;
+    margin-top: 80px;
+  }
+
+  .contactLeft h2 {
+    font-size: 35px;
+  }
+
+  .contactRight {
+    padding: 0 5px;
+  }
+
+  .contactBox {
+    width: 100%;
+    min-height: 300px;
+  }
+
+  .portfolioGrid{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .heroContent {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .fsocial i{
+    font-size: 20px;
+  }
+
+  .backtotop{
+    font-size: 14px;
+  }
+
+  .ftext{
+    font-size: 14px;
+  }
+}
